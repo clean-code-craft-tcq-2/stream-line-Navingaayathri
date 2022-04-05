@@ -15,13 +15,11 @@ FileAccess getSensorData()
 {
   FILE *sensData_fp;
   int line=1; 
-  ReadData=NOK;
-   	
+  ReadData=NOK;   	
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
   if (sensData_fp==NULL)
   {
   printf("Unable to open the file\n");
-  ReadData=NOK;
   }	
   else
   {
@@ -50,17 +48,12 @@ FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 WriteData=NOK;
   if (startTrasmissionReq)
   {
-    char *SenderData; 
-    FILE *sensData_fp;
-	 SenderData=strcat(SenderData,".csv");
-	 sensData_fp=fopen(SenderData,"w+");
-    fprintf("BatterySoC in percentage,BatteryVoltage in volts\n");
+    printf("BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    fprintf("%d,%f\n", BatterySoC[i],BatteryVoltage[i]);
+    printf("%d,%f\n", BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
-fclose(sensData_fp);   
 return WriteData;
 }
