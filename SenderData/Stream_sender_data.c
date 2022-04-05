@@ -21,6 +21,7 @@ FileAccess getSensorData()
   if (sensData_fp==NULL)
   {
   printf("Unable to open the file\n");
+  ReadData=NOK;
   }	
   else
   {
@@ -52,7 +53,7 @@ WriteData=NOK;
   printf("BatterySoC in percentage\tBatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    printf("\t\t\t%d \t\t\t\t\t\t%.2f\n", BatterySoC[i],BatteryVoltage[i]);
+    printf("\t%d\t\t\t%.2f\n", BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
