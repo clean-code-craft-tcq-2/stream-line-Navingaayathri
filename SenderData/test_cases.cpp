@@ -19,3 +19,9 @@ TEST_CASE("To check the data read from the file is displayed on the console")
   DataStreamMode startTrasmissionReq=Transmitdata;
   REQUIRE(displayReadingsOnConsole(startTrasmissionReq)== OK);
 }
+
+TEST_CASE("To stop transmitting the data to be displayed on the console") 
+{
+  DataStreamMode startTrasmissionReq=StopTransmit;
+  REQUIRE(displayReadingsOnConsole(startTrasmissionReq)== NOK);
+}
