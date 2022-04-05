@@ -25,7 +25,7 @@ FileAccess getSensorData()
 	else
 	{
 		int Idx=0, ReadBatterySoC=0; 
-		float ReadBatteryVoltage=0.0;
+		float ReadBatteryVoltage=0;
 		printf("File opened successfully\n");
 		while(line != EOF)
 		{
@@ -39,7 +39,7 @@ FileAccess getSensorData()
 	}
 	
 	fclose(sensData_fp);
-	return OK;
+	return ReadData;
 }
 
 /* This function reads the sensor readings of battery parameters from the buffer and writes them on to the Console window based on startTrasmissionReq*/
