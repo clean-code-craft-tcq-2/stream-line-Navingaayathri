@@ -17,11 +17,7 @@ FileAccess getSensorData()
   int line=1; 
   ReadData=NOK;   	
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
-  if (sensData_fp==NULL)
-  {
-  exit(1);
-  }	
-  else
+  if (sensData_fp!=NULL)
   {
   int ReadBatterySoC=0; 
   float ReadBatteryVoltage=0;
