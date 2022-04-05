@@ -50,12 +50,17 @@ FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 WriteData=NOK;
   if (startTrasmissionReq)
   {
-  printf("BatterySoC in percentage,BatteryVoltage in volts\n");
+    char *SenderData; 
+    FILE *sensData_fp;
+	 SenderData=strcat(SenderData,".csv");
+	 sensData_fp=fopen(SenderData,"w+");
+    fprintf("BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    printf("%d,%f\n", BatterySoC[i],BatteryVoltage[i]);
+    fprintf("%d,%f\n", BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
+fclose(sensData_fp);   
 return WriteData;
 }
