@@ -4,7 +4,7 @@
 #include "Stream_sender_data.h"  
 
 FileAccess ReadData, WriteData;
-int buffSize=0;
+int buffSize=0, ReadingCount[]={};
 int BatterySoC[]={};
 float BatteryVoltage[]={};
 
@@ -19,13 +19,14 @@ FileAccess getSensorData()
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
   if (sensData_fp!=NULL)
   {
-  int ReadBatterySoC=0; 
+  int Count, ReadBatterySoC=0; 
   float ReadBatteryVoltage=0;
   printf("File opened successfully\n"); 
   int Idx=0;
   while(line != EOF)
   {
-  line=fscanf(sensData_fp,"%d %f",&ReadBatterySoC,&ReadBatteryVoltage);
+  line=fscanf(sensData_fp,"%d %d %f",&Count, &ReadBatterySoC, &ReadBatteryVoltage);
+  ReadingCount[Idx]=Count;     
   BatterySoC[Idx]=ReadBatterySoC;
   BatteryVoltage[Idx]=ReadBatteryVoltage;
   Idx++;
@@ -47,7 +48,7 @@ WriteData=NOK;
     printf("BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    printf("%d,%.2f\n", BatterySoC[i],BatteryVoltage[i]);
+    printf("%d,%d,%.2f\n", ReadingCount[i],BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
