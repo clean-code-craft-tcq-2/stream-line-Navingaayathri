@@ -19,7 +19,7 @@ FileAccess getSensorData()
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
   if (sensData_fp==NULL)
   {
-  printf("Unable to open the file\n");
+  exit(1);
   }	
   else
   {
