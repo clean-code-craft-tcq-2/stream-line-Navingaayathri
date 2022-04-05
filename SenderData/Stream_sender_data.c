@@ -17,7 +17,7 @@ FileAccess getSensorData()
   FILE *sensData_fp;
   ReadData=NOK;
   int line=1;  	
-  sensData_fp=fopen("./SenderData/SensorData.csv", "r");
+  sensData_fp=fopen("./SenderData/SensorData.txt", "r");
   	if (sensData_fp==NULL)	{
 		printf("Unable to open the file\n");
 		
