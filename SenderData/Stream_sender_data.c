@@ -10,13 +10,14 @@ int BatterySoC[]={};
 float BatteryVoltage[]={};
 
 
-/* Function to read the sensor readings from "SensorData.csv" file and store into a buffer */
+/* Function to read the sensor readings from "SensorData.txt" file and store into a buffer */
    
 FileAccess getSensorData()
 {
   FILE *sensData_fp;
+  int line=1; 
   ReadData=NOK;
-  int line=1;  	
+   	
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
   	if (sensData_fp==NULL)	{
 		printf("Unable to open the file\n");
@@ -24,9 +25,10 @@ FileAccess getSensorData()
 	}	
 	else
 	{
-		int Idx=0, ReadBatterySoC=0; 
+		int ReadBatterySoC=0; 
 		float ReadBatteryVoltage=0;
 		printf("File opened successfully\n");
+		int Idx=0;
 		while(line != EOF)
 		{
 			line=fscanf(sensData_fp,"%d %f",&ReadBatterySoC,&ReadBatteryVoltage);
