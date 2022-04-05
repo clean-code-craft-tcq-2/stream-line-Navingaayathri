@@ -11,5 +11,5 @@ TEST_CASE("To check if file is successfully opened for read data access")
 TEST_CASE("To check the data read from the file is displayed on the console") 
 {
   DataStreamMode ReqfromUser=Transmitdata;
-  REQUIRE(displayReadingsOnConsole(ReqfromUser)== OK)
+  REQUIRE(displayReadingsOnConsole(ReqfromUser)== OK);
 }
