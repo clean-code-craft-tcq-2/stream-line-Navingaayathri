@@ -9,12 +9,6 @@ TEST_CASE("To check if file is successfully opened for read data access")
  REQUIRE_NOTHROW(getSensorData()== OK); 
 }
 
-TEST_CASE("To check for unsuccessful attempt of opening the input file for read data access") 
-{ 
-FILE *sensData_fp=NULL; 
-REQUIRE_THROWS(getSensorData()); 
-}
-
 TEST_CASE("To check the data read from the file is displayed on the console") 
 {
   DataStreamMode startTrasmissionReq=Transmitdata;
