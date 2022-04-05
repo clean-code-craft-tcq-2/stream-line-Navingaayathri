@@ -26,7 +26,7 @@ FileAccess getSensorData()
 		printf("File opened successfully\n");
 		while(line != EOF)
 		{
-			line=fscanf(sensData_fp,"%f %f",&ReadBatterySoC,&ReadBatteryVoltage);
+			line=fscanf(sensData_fp,"%d %f",&ReadBatterySoC,&ReadBatteryVoltage);
 			BatterySoC[Idx]=ReadBatterySoC;
 			BatteryVoltage[Idx]=ReadBatteryVoltage;
 			Idx++;
@@ -46,10 +46,10 @@ FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 	WriteData=NOK;
 	if (startTrasmissionReq)
 	{
-		printf("BatterySoC \t BatteryVoltage\n");
+		printf("BatterySoC(%) \t\t BatteryVoltage(V)\n");
 		for(int i=0; i < buffSize; i++)
 		{
-			printf("%d %\t\t %.2f V\n", BatterySoC[i],BatteryVoltage[i]);
+			printf("%d \t\t %.2f\n", BatterySoC[i],BatteryVoltage[i]);
 		}
 		WriteData= OK;
 	}	
