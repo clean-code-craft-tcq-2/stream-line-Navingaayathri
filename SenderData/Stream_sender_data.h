@@ -5,8 +5,8 @@
 #define MAX_SENSOR_READINGS 100  
 
 typedef enum {
-  OK,
-  NOK
+  NOK,
+  OK
 } FileAccess;
 
 typedef enum {
