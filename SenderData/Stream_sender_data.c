@@ -47,7 +47,7 @@ WriteData=NOK;
     printf("BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    printf("%d,%f\n", BatterySoC[i],BatteryVoltage[i]);
+    printf("%d,%.2f\n", BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
