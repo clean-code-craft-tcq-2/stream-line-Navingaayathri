@@ -19,44 +19,43 @@ FileAccess getSensorData()
   ReadData=NOK;
    	
   sensData_fp=fopen("./SenderData/SensorData.txt", "r");
-  	if (sensData_fp==NULL)	{
-		printf("Unable to open the file\n");
-		
-	}	
-	else
-	{
-		int ReadBatterySoC=0; 
-		float ReadBatteryVoltage=0;
-		printf("File opened successfully\n");
-		int Idx=0;
-		while(line != EOF)
-		{
-			line=fscanf(sensData_fp,"%d %f",&ReadBatterySoC,&ReadBatteryVoltage);
-			BatterySoC[Idx]=ReadBatterySoC;
-			BatteryVoltage[Idx]=ReadBatteryVoltage;
-			Idx++;
-		}
-		buffSize=Idx;
-		ReadData= OK;
-	}
-	
-	fclose(sensData_fp);
-	return ReadData;
+  if (sensData_fp==NULL)
+  {
+  printf("Unable to open the file\n");
+  }	
+  else
+  {
+  int ReadBatterySoC=0; 
+  float ReadBatteryVoltage=0;
+  printf("File opened successfully\n"); 
+  int Idx=0;
+  while(line != EOF)
+  {
+  line=fscanf(sensData_fp,"%d %f",&ReadBatterySoC,&ReadBatteryVoltage);
+  BatterySoC[Idx]=ReadBatterySoC;
+  BatteryVoltage[Idx]=ReadBatteryVoltage;
+  Idx++;
+  }
+  buffSize=Idx;
+  ReadData= OK;
+  }	
+fclose(sensData_fp);
+return ReadData;
 }
 
 /* This function reads the sensor readings of battery parameters from the buffer and writes them on to the Console window based on startTrasmissionReq*/
    
 FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 {
-	WriteData=NOK;
-	if (startTrasmissionReq)
-	{
-		printf("BatterySoC in percentage \t\t BatteryVoltage in volts)\n");
-		for(int i=0; i < buffSize; i++)
-		{
-			printf("%d \t\t %.2f\n", BatterySoC[i],BatteryVoltage[i]);
-		}
-		WriteData= OK;
-	}	
-	return WriteData;
+WriteData=NOK;
+  if (startTrasmissionReq)
+  {
+  printf("BatterySoC in percentage\tBatteryVoltage in volts\n");
+    for(int i=0; i < buffSize; i++)
+    {
+    printf("%d \t\t\t\t %.2f\n", BatterySoC[i],BatteryVoltage[i]);
+    }
+    WriteData= OK;
+   }	
+return WriteData;
 }
