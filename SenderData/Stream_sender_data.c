@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "Stream_sender_data.h"
-  
+#include "Stream_sender_data.h"  
 
 FileAccess ReadData, WriteData;
 int buffSize=0;
@@ -53,7 +52,7 @@ WriteData=NOK;
   printf("BatterySoC in percentage\tBatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
-    printf("%d \t\t\t\t %.2f\n", BatterySoC[i],BatteryVoltage[i]);
+    printf("\t\t\t%d \t\t\t\t\t\t%.2f\n", BatterySoC[i],BatteryVoltage[i]);
     }
     WriteData= OK;
    }	
