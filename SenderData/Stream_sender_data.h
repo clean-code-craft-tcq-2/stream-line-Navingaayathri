@@ -5,13 +5,13 @@
 #define MAX_SENSOR_READINGS 100  
 
 typedef enum {
-  NOK,
-  OK
+  OK,
+  NOK
 } FileAccess;
 
 typedef enum {
-  Transmitdata,
-  StopTransmit 
+  StopTransmit,
+  Transmitdata
 } DataStreamMode;
 
 extern int buffSize;
