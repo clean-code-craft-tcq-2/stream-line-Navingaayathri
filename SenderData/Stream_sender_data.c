@@ -45,7 +45,7 @@ FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 WriteData=NOK;
   if (startTrasmissionReq)
   {
-    printf("BatterySoC in percentage,BatteryVoltage in volts\n");
+    printf("ReadingsCount,BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize; i++)
     {
     printf("%d,%d,%.2f\n", ReadingCount[i],BatterySoC[i],BatteryVoltage[i]);
