@@ -5,12 +5,14 @@
 
 TEST_CASE("To check if file is successfully opened for read data access") 
 {
- REQUIRE(getSensorData()== OK); 
+ FILE *sensData_fp=fopen("./SenderData/SensorData.txt", "r"); 
+ REQUIRE_NOTHROW(getSensorData()== OK); 
 }
 
 TEST_CASE("To check for unsuccessful attempt of opening the input file for read data access") 
 { 
-FAIL_CHECK("Unable to open the file");
+FILE *sensData_fp=NULL; 
+REQUIRE_THROWS(getSensorData()== OK); 
 }
 
 TEST_CASE("To check the data read from the file is displayed on the console") 
