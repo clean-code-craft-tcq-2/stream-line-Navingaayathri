@@ -7,6 +7,9 @@
 
 int BatterySoCRead[] = { };
 float BatteryVoltageRead[] = { };
+int MaxSocValue, MinSocValue=0;
+float MaxVoltageValue,MinVoltageValue=0;
+
 
 void
 ReadDataFromConsole (int *SoCRead, float *VoltageRead, int Size)
@@ -43,4 +46,57 @@ DisplayReceivedData (int SampleToDisplay)
     }
     return result;
 }
+int MaxSoc(int count)
+{
+        int soc=BatterySoCRead[0];
+        for(int i=0;i<count;i++)
+        {
+                if(BatterySoCRead[i]>soc)
+                {
+                        soc=BatterySoCRead[i];
+                }
+        }
+        return soc;
+        
+}
 
+int MinSoc(int count)
+{
+        int soc=BatterySoCRead[0];
+        for(int i=0;i<count;i++)
+        {
+                if(BatterySoCRead[i]<soc)
+                {
+                        soc=BatterySoCRead[i];
+                }
+        }
+        return soc;
+        
+}
+float MaxVoltage(int count)
+{
+        float VoltageMax=BatteryVoltageRead[0];
+        for(int i=0;i<count;i++)
+        {
+                if(BatteryVoltageRead[i]>VoltageMax)
+                {
+                        VoltageMax=BatteryVoltageRead[i];
+                }
+        }
+        return VoltageMax;
+        
+}
+
+float MinVoltage(int count)
+{
+        float VoltageMin=BatteryVoltageRead[0];
+        for(int i=0;i<count;i++)
+        {
+                if(BatteryVoltageRead[i]<VoltageMin)
+                {
+                        VoltageMin=BatteryVoltageRead[i];
+                }
+        }
+        return VoltageMin;
+        
+}
