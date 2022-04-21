@@ -13,6 +13,7 @@ TEST_CASE("Test code Read from Console")
   int samples=1, value =0;
   printf("1,100,12.90\n");
   ReadDataFromConsole(BatterySoCRead,BatteryVoltageRead,samples);
+  DisplayReceivedData(samples);
 }
 
 TEST_CASE("Test code Parse")
