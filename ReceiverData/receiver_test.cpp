@@ -39,7 +39,7 @@ printf("\nMaxVoltageValue:%f",MaxVoltageValue);
 printf("\nMinVOltageValue:%f",MinVoltageValue);
  
  REQUIRE(MaxSocValue==expectedMaxSocValue);
-  REQIIRE(MinSocValue==expectedMinSocValue);
+  REQUIRE(MinSocValue==expectedMinSocValue);
   REQUIRE(MaxVoltageValue==expectedMaxVoltageValue);
-  REQIIRE(MinVoltageValue==expectedMinVoltageValue);
+  REQUIRE(MinVoltageValue==expectedMinVoltageValue);
 }
