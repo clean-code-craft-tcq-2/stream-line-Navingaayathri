@@ -7,3 +7,9 @@ TEST_CASE("Test code")
   int samples=50, value =0;
 value= DisplayReceivedData(samples);
 }
+
+TEST_CASE("Test code Read from Console")
+{
+  int samples=50, value =0;
+ReadDataFromConsole(BatterySoCRead,BatteryVoltageRead,samples);
+}
