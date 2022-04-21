@@ -4,6 +4,6 @@
 #include "Stream_Receiver_data.h"
 TEST_CASE("Test code")
 {
-  int samples=50;
+  int samples=50, value =0;
 value= DisplayReceivedData(samples);
 }
