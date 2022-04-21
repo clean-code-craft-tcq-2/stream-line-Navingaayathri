@@ -41,11 +41,11 @@ void CommaSeparatedData(char str[], int index)
 	}
 }
 int
-DisplayReceivedData ()
+DisplayReceivedData (int SampleToDisplay)
 {
         int result =0;
   printf ("\n Displaying the received Data from Console\n");
-  for (int i = 0; i < MAX_SENSOR_SAMPLES; i++)
+  for (int i = 0; i < SampleToDisplay; i++)
     {
       printf ("SoC:%d\tVoltage: %.2f\n", BatterySoCRead[i],
 	      BatteryVoltageRead[i]);
