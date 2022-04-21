@@ -4,7 +4,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include "Stream_Receiver_data.h"
-#include "Stream_sender_data.h"
 
 int BatterySoCRead[] = { };
 float BatteryVoltageRead[] = { };
@@ -46,7 +45,7 @@ DisplayReceivedData ()
 {
         int result =0;
   printf ("\n Displaying the received Data from Console\n");
-  for (int i = 0; i < MAX_SENSOR_READINGS; i++)
+  for (int i = 0; i < MAX_SENSOR_SAMPLES; i++)
     {
       printf ("SoC:%d\tVoltage: %.2f\n", BatterySoCRead[i],
 	      BatteryVoltageRead[i]);
