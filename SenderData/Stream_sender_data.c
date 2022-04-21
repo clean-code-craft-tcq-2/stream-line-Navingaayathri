@@ -21,7 +21,7 @@ FileAccess getSensorData()
   {
   int Count, ReadBatterySoC=0; 
   float ReadBatteryVoltage=0;
-  printf("File opened successfully\n"); 
+  //printf("File opened successfully\n"); 
   int Idx=0;
   while(line != EOF)
   {
@@ -45,7 +45,7 @@ FileAccess displayReadingsOnConsole(DataStreamMode startTrasmissionReq)
 WriteData=NOK;
   if (startTrasmissionReq)
   {
-    printf("ReadingsCount,BatterySoC in percentage,BatteryVoltage in volts\n");
+    //printf("ReadingsCount,BatterySoC in percentage,BatteryVoltage in volts\n");
     for(int i=0; i < buffSize-1; i++)
     {
     printf("%d,%d,%.2f\n", ReadingCount[i],BatterySoC[i],BatteryVoltage[i]);
