@@ -17,7 +17,7 @@ ReadDataFromConsole (int *SoCRead, float *VoltageRead, int Size)
     {
       scanf ("%[^,]", ReadString);	//1
       scanf ("%50s", ReadString);
-   //     CommaSeparatedData(ReadString,i);
+        CommaSeparatedData(ReadString,i);
     }
 }
 void CommaSeparatedData(char str[], int index)
