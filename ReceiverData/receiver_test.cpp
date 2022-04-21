@@ -13,3 +13,9 @@ TEST_CASE("Test code Read from Console")
   int samples=50, value =0;
 ReadDataFromConsole(BatterySoCRead,BatteryVoltageRead,samples);
 }
+
+TEST_CASE("Test code Parse")
+{
+  char buff[20]="96,12.80";
+  CommaSeparatedData(buff,1);
+}
