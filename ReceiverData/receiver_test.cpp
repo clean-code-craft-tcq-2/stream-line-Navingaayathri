@@ -8,14 +8,6 @@ TEST_CASE("Test code")
 value= DisplayReceivedData(samples);
 }
 
-TEST_CASE("Test code Read 3 samples from Console")
-{
-  int samples=3, value =0;
-  printf("1,100,12.90\n");
-  ReadDataFromConsole(BatterySoCRead,BatteryVoltageRead,samples);
-  DisplayReceivedData(samples);
-}
-
 TEST_CASE("Test code Parse")
 {
   char buff[20]="96,12.80";
