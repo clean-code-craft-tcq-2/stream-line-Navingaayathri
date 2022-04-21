@@ -24,6 +24,9 @@ jobs:
     - name: buildReceiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testcheckerReceiver ./ReceiverData/*.c*
       
+    - name: Pipeline sender/receiver
+      run: ./testcheckerSend | ./testcheckerReceiver
+      
     - name: run
       run: ./testcheckerReceiver
 
