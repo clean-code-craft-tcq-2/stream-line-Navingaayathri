@@ -7,6 +7,8 @@
 
 int BatterySoCRead[] = { };
 float BatteryVoltageRead[] = { };
+float SMA[] = { };
+
 int MaxSocValue, MinSocValue=0;
 float MaxVoltageValue,MinVoltageValue=0;
 
