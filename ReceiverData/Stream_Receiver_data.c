@@ -100,3 +100,16 @@ float MinVoltage(int count)
         return VoltageMin;
         
 }
+float *MovingAverage (float *SMA, int count)
+{
+  float sumSoC,sumVoltage=0;
+  for (int i = (count - 5); i < (count); i++)
+    {
+         //   printf("\nvoltage[%d]:%f,Soc[%d]:%d",i,BatteryVoltageRead[i],i,BatterySoCRead[i]);
+      sumSoC += BatterySoCRead[i];
+      sumVoltage += BatteryVoltageRead[i];
+    }
+  SMA[0] = sumSoC/5;
+  SMA[1] = sumVoltage/5;
+  return SMA;
+}
